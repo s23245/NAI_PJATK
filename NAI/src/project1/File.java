@@ -21,13 +21,14 @@ public class File
             {
                 String[] attributes = line.split(",");
                 Flower flower = new Flower();
+                double[] attributes_double = new double[attributes.length - 1];
 
-                flower.setSepalLength(Double.parseDouble(attributes[0]));
-                flower.setSepalWidth(Double.parseDouble(attributes[1]));
-                flower.setPetalLength(Double.parseDouble(attributes[2]));
-                flower.setPetalWidth(Double.parseDouble(attributes[3]));
+                for(int i = 0; i < attributes.length - 1; i++)
+                    attributes_double[i] = Double.parseDouble(attributes[i]);
 
-                data.put(flower,IrisEnum.forValue(attributes[4]));
+                flower.setAttributes(attributes_double);
+
+                data.put(flower,IrisEnum.forValue(attributes[attributes.length-1]));
                 line = file.readLine();
             }
             file.close();

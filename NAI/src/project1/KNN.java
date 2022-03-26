@@ -56,10 +56,14 @@ public class KNN
         // square_root (( attribute of first flower - attribute of second flower ) ^ 2 )
         double distnace = 0d;
 
-        distnace += Math.pow(flow1.getSepalLength() - flow2.getSepalLength(),2);
-        distnace += Math.pow(flow1.getSepalWidth() - flow2.getSepalWidth(),2);
-        distnace += Math.pow(flow1.getPetalLength() - flow2.getPetalLength(),2);
-        distnace += Math.pow(flow1.getPetalWidth() - flow2.getPetalWidth(),2);
+        double[] first_flower_attributes = flow1.getAttributes();
+        double[] second_flower_attributes = flow2.getAttributes();
+
+        for(int i = 0; i < first_flower_attributes.length; i++)
+        {
+            distnace += Math.pow(first_flower_attributes[i] - second_flower_attributes[i],2);
+        }
+
 
 
         return Math.sqrt(distnace);

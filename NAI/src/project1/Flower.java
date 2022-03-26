@@ -1,40 +1,16 @@
 package project1;
 
-public class Flower {
-    private double sepalLength;
-    private double sepalWidth;
-    private double petalLength;
-    private double petalWidth;
+public class Flower
+{
+    private double[] attributes;
 
-    public double getSepalLength() {
-        return sepalLength;
+    public void setAttributes(double[] attributes) {
+        this.attributes = attributes;
     }
 
-    public double getSepalWidth() {
-        return sepalWidth;
+    public double[] getAttributes() {
+        return attributes;
     }
 
-    public double getPetalLength() {
-        return petalLength;
-    }
 
-    public double getPetalWidth() {
-        return petalWidth;
-    }
-
-    public void setSepalLength(double sepalLength) {
-        this.sepalLength = sepalLength;
-    }
-
-    public void setSepalWidth(double sepalWidth) {
-        this.sepalWidth = sepalWidth;
-    }
-
-    public void setPetalLength(double petalLength) {
-        this.petalLength = petalLength;
-    }
-
-    public void setPetalWidth(double petalWidth) {
-        this.petalWidth = petalWidth;
-    }
 }
